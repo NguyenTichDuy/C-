@@ -33,10 +33,10 @@ bool XuLiThua()
 		(soNhap[3] == soNhap[4] && soNhap[4] == soNhap[5]) ||
 		(soNhap[6] == soNhap[7] && soNhap[7] == soNhap[8]) ||
 		(soNhap[0] == soNhap[4] && soNhap[4] == soNhap[8]) ||
-		(soNhap[2] == soNhap[4] && soNhap[6] == soNhap[6]) ||
+		(soNhap[2] == soNhap[4] && soNhap[4] == soNhap[6]) ||
 		(soNhap[0] == soNhap[3] && soNhap[3] == soNhap[6]) ||
 		(soNhap[1] == soNhap[4] && soNhap[4] == soNhap[7]) ||
-		(soNhap[2] == soNhap[5] && soNhap[5] == soNhap[9]))
+		(soNhap[2] == soNhap[5] && soNhap[5] == soNhap[8]))
 	{
 		return true;
 	}
@@ -46,9 +46,18 @@ bool XuLiThua()
 //-----------------Xu li luot choi ---------------
 void XuLi()
 {
+	int dem = 0;
 	bool endGame = true;
 	while (endGame)
 	{
+
+		if (dem == 9)
+		{
+			cout << "Game Over !!!!!" << endl;
+			cout << "Game hoa :)" << endl;
+			endGame = false;
+			continue;
+		}
 		if (XuLiThua())
 		{
 			cout << "Game Over !!!!!" << endl;
@@ -58,7 +67,9 @@ void XuLi()
 			continue;
 		}
 		else
+		{
 			Nguoi1();
+		}	
 
 		if (XuLiThua())
 		{
@@ -69,7 +80,10 @@ void XuLi()
 			continue;
 		}
 		else
+		{
 			Nguoi2();
+		}
+		dem++;
 	}
 }
 //-------------Ve ban choi---------------
