@@ -42,7 +42,12 @@ bool XuLiThua()
 {
 	if ((soNhap[0] == soNhap[1] && soNhap[1] == soNhap[2]) ||
 		(soNhap[3] == soNhap[4] && soNhap[4] == soNhap[5]) ||
-		(soNhap[6] == soNhap[7] && soNhap[7] == soNhap[8]))
+		(soNhap[6] == soNhap[7] && soNhap[7] == soNhap[8]) ||
+		(soNhap[0] == soNhap[4] && soNhap[4] == soNhap[8]) ||
+		(soNhap[2] == soNhap[4] && soNhap[6] == soNhap[6]) ||
+		(soNhap[0] == soNhap[3] && soNhap[3] == soNhap[6]) ||
+		(soNhap[1] == soNhap[4] && soNhap[4] == soNhap[7]) ||
+		(soNhap[3] == soNhap[6] && soNhap[6] == soNhap[9]))
 	{
 		return true;
 	}
@@ -54,31 +59,35 @@ void XuLi()
 {
 	int index = 0;
 	int num = 0;
-	bool endGame = false;
+	bool endGame = true;
 	int KiemTraHoa = 0;
-
+	bool KiemTraKetThuc = true;
 	while (endGame)
 	{
-		if (XuLiThua)
+		if (XuLiThua())
 		{
 			cout << "Game Over !!!!!" << endl;
 			cout << "Nguoi chien thang la: " << Player2 << endl;
-			break;
+			system("pause");
+			goto ketThuc;
 		}
 		Nguoi1();
-		/*if (XuLiThua)
+		if (XuLiThua())
 		{
-			cout << "Game Over !!!!!" << endl;
-			cout << "Nguoi chien thang la: " << Player1 << endl;
-			break;
-		}*/
+			cout << "game over !!!!!" << endl;
+			cout << "nguoi chien thang la: " << Player1 << endl;
+			system("pause");
+			goto ketThuc;
+		}
 		Nguoi2();
+	
 	}
-
+ketThuc:;
 }
 //-------------Ve ban choi---------------
 void BanChoi()
 {
+	cout << endl;
 	cout << "_____________________________________________ " << endl;
 	cout << "\t \t|\t \t|" << endl;
 	cout << "\t" << soNhap[0] << "\t|" << "\t" << soNhap[1] << "\t|\t" << soNhap[2] << endl;
@@ -202,5 +211,4 @@ int main()
 
 		XuLi();
 	}
-
 }
