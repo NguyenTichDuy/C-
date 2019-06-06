@@ -47,7 +47,6 @@ bool XuLiThua()
 //-----------------Xu li luot choi ---------------
 void XuLi()
 {
-
 	bool endGame = true;
 	while (endGame)
 	{
@@ -56,6 +55,8 @@ void XuLi()
 			cout << "Game Over !!!!!" << endl;
 			cout << "Nguoi chien thang la: " << Player2 << endl;
 			endGame = false;
+			system("pause");
+			continue;
 		}
 		else
 			Nguoi1();
@@ -65,6 +66,8 @@ void XuLi()
 			cout << "game over !!!!!" << endl;
 			cout << "nguoi chien thang la: " << Player1 << endl;
 			endGame = false;
+			system("pause");
+			continue;
 		}
 		else
 			Nguoi2();
