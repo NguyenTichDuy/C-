@@ -2,9 +2,8 @@
 using namespace std;
 
 char Player1[50], Player2[50];
-int soNhap[9];
+char soNhap[] = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-void TaoDuLieuBanChoi();
 bool start();
 bool XuLiThua();
 void XuLi();
@@ -14,17 +13,6 @@ void Nguoi2();
 void Nguoi1();
 void VeLai();
 
-//-----------Tao du lieu cho ban choi bat dau-------------
-void TaoDuLieuBanChoi()
-{
-	int length = sizeof(soNhap) / sizeof(char);
-	int num = 1;
-	for (int i = 0; i < length; i++)
-	{
-		soNhap[i] = num;
-		num++;
-	}
-}
 
 //------------Bat Dau -----------------
 bool start()
@@ -49,7 +37,7 @@ bool XuLiThua()
 		(soNhap[2] == soNhap[4] && soNhap[6] == soNhap[6]) ||
 		(soNhap[0] == soNhap[3] && soNhap[3] == soNhap[6]) ||
 		(soNhap[1] == soNhap[4] && soNhap[4] == soNhap[7]) ||
-		(soNhap[3] == soNhap[6] && soNhap[6] == soNhap[9]))
+		(soNhap[2] == soNhap[5] && soNhap[5] == soNhap[9]))
 	{
 		return true;
 	}
@@ -207,7 +195,6 @@ int main()
 	if (start())
 	{
 		NhapTenNhanVat();
-		TaoDuLieuBanChoi();
 		BanChoi();
 		XuLi();
 	}
