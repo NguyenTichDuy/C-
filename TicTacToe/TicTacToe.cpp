@@ -59,32 +59,28 @@ bool XuLiThua()
 //-----------------Xu li luot choi ---------------
 void XuLi()
 {
-	int index = 0;
-	int num = 0;
+
 	bool endGame = true;
-	int KiemTraHoa = 0;
-	bool KiemTraKetThuc = true;
 	while (endGame)
 	{
 		if (XuLiThua())
 		{
 			cout << "Game Over !!!!!" << endl;
 			cout << "Nguoi chien thang la: " << Player2 << endl;
-			system("pause");
-			goto ketThuc;
+			endGame = false;
 		}
-		Nguoi1();
+		else
+			Nguoi1();
+
 		if (XuLiThua())
 		{
 			cout << "game over !!!!!" << endl;
 			cout << "nguoi chien thang la: " << Player1 << endl;
-			system("pause");
-			goto ketThuc;
+			endGame = false;
 		}
-		Nguoi2();
-	
+		else
+			Nguoi2();
 	}
-ketThuc:;
 }
 //-------------Ve ban choi---------------
 void BanChoi()
