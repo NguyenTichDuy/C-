@@ -26,7 +26,6 @@ bool start()
 		return true;
 	return false;
 }
-
 //-----------------Xu li thua --------------
 bool XuLiThua()
 {
