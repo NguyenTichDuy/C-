@@ -25,6 +25,7 @@ void TaoDuLieuBanChoi()
 		num++;
 	}
 }
+
 //------------Bat Dau -----------------
 bool start()
 {
@@ -37,6 +38,7 @@ bool start()
 		return true;
 	return false;
 }
+
 //-----------------Xu li thua --------------
 bool XuLiThua()
 {
@@ -108,6 +110,7 @@ void NhapTenNhanVat()
 	cout << "Enter Player 1 Name: ";
 	cin >> Player1;
 	fflush(stdin);
+	cout << endl;
 	cout << "Enter Player 2 Name: ";
 	cin >> Player2;
 }
@@ -154,12 +157,14 @@ void Nguoi1()
 	}
 	VeLai();
 }
-//---------------Nguoi choi 2 di -----------------
+
 void VeLai()
 {
 	system("cls");
 	BanChoi();
 }
+
+//---------------Nguoi choi 2 di -----------------
 void Nguoi2()
 {
 	int num;
@@ -208,7 +213,6 @@ int main()
 		NhapTenNhanVat();
 		TaoDuLieuBanChoi();
 		BanChoi();
-
 		XuLi();
 	}
 }
