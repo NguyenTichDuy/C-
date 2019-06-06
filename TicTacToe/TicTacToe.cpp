@@ -2,9 +2,8 @@
 using namespace std;
 
 char Player1[50], Player2[50];
-int soNhap[9];
+char soNhap[] = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-void TaoDuLieuBanChoi();
 bool start();
 bool XuLiThua();
 void XuLi();
@@ -14,17 +13,7 @@ void Nguoi2();
 void Nguoi1();
 void VeLai();
 
-//-----------Tao du lieu cho ban choi bat dau-------------
-void TaoDuLieuBanChoi()
-{
-	int length = sizeof(soNhap) / sizeof(char);
-	int num = 1;
-	for (int i = 0; i < length; i++)
-	{
-		soNhap[i] = num;
-		num++;
-	}
-}
+
 //------------Bat Dau -----------------
 bool start()
 {
@@ -37,6 +26,7 @@ bool start()
 		return true;
 	return false;
 }
+
 //-----------------Xu li thua --------------
 bool XuLiThua()
 {
@@ -47,7 +37,7 @@ bool XuLiThua()
 		(soNhap[2] == soNhap[4] && soNhap[6] == soNhap[6]) ||
 		(soNhap[0] == soNhap[3] && soNhap[3] == soNhap[6]) ||
 		(soNhap[1] == soNhap[4] && soNhap[4] == soNhap[7]) ||
-		(soNhap[3] == soNhap[6] && soNhap[6] == soNhap[9]))
+		(soNhap[2] == soNhap[5] && soNhap[5] == soNhap[9]))
 	{
 		return true;
 	}
@@ -57,32 +47,31 @@ bool XuLiThua()
 //-----------------Xu li luot choi ---------------
 void XuLi()
 {
-	int index = 0;
-	int num = 0;
 	bool endGame = true;
-	int KiemTraHoa = 0;
-	bool KiemTraKetThuc = true;
 	while (endGame)
 	{
 		if (XuLiThua())
 		{
 			cout << "Game Over !!!!!" << endl;
 			cout << "Nguoi chien thang la: " << Player2 << endl;
+			endGame = false;
 			system("pause");
-			goto ketThuc;
+			continue;
 		}
-		Nguoi1();
+		else
+			Nguoi1();
+
 		if (XuLiThua())
 		{
 			cout << "game over !!!!!" << endl;
 			cout << "nguoi chien thang la: " << Player1 << endl;
+			endGame = false;
 			system("pause");
-			goto ketThuc;
+			continue;
 		}
-		Nguoi2();
-	
+		else
+			Nguoi2();
 	}
-ketThuc:;
 }
 //-------------Ve ban choi---------------
 void BanChoi()
@@ -108,6 +97,7 @@ void NhapTenNhanVat()
 	cout << "Enter Player 1 Name: ";
 	cin >> Player1;
 	fflush(stdin);
+	cout << endl;
 	cout << "Enter Player 2 Name: ";
 	cin >> Player2;
 }
@@ -154,12 +144,14 @@ void Nguoi1()
 	}
 	VeLai();
 }
-//---------------Nguoi choi 2 di -----------------
+
 void VeLai()
 {
 	system("cls");
 	BanChoi();
 }
+
+//---------------Nguoi choi 2 di -----------------
 void Nguoi2()
 {
 	int num;
@@ -206,9 +198,7 @@ int main()
 	if (start())
 	{
 		NhapTenNhanVat();
-		TaoDuLieuBanChoi();
 		BanChoi();
-
 		XuLi();
 	}
 }
