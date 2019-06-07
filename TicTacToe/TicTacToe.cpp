@@ -56,6 +56,7 @@ void XuLi()
 			cout << "Game Over !!!!!" << endl;
 			cout << "Game hoa :)" << endl;
 			endGame = false;
+			system("pause");
 			continue;
 		}
 		if (XuLiThua())
@@ -69,8 +70,16 @@ void XuLi()
 		else
 		{
 			Nguoi1();
-		}	
-
+		}
+		dem++;
+		if (dem == 9)
+		{
+			cout << "Game Over !!!!!" << endl;
+			cout << "Game hoa :)" << endl;
+			system("pause");
+			endGame = false;
+			continue;
+		}
 		if (XuLiThua())
 		{
 			cout << "game over !!!!!" << endl;
