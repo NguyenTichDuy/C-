@@ -117,11 +117,11 @@ void NhapTenNhanVat()
 {
 	system("cls");
 	cout << "Enter Player 1 Name: ";
-	cin >> Player1;
-	fflush(stdin);
-	cout << endl;
-	cout << "Enter Player 2 Name: ";
-	cin >> Player2;
+	cin.ignore();
+	cin.getline(Player1, 50, '\n');
+	cout << "Enter Player 2 Name: ";	
+	cin.getline(Player2, 50, '\n');
+
 }
 //---------------Nguoi 1 di ---------------
 void Nguoi1()
