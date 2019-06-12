@@ -17,11 +17,12 @@ void VeLai();
 //------------Bat Dau -----------------
 bool start()
 {
-	int selectMode;
+	int selectMode,c;
 	cout << "Welcome To Tic-tac-toe game! Play with your way!" << endl;
 	cout << "If you find any problem, please contact nguyentichduy10a15cmg@gmail.com\n" << endl;
 	cout << "SELECT YOUR MODE (1 - PLAY GAME, OTHERS - EXIT GAME): ";
 	cin >> selectMode;
+
 	if (selectMode == 1)
 		return true;
 	return false;
@@ -98,7 +99,7 @@ void XuLi()
 //-------------Ve ban choi---------------
 void BanChoi()
 {
-	cout << endl;
+	/*cout << endl;*/
 	cout << "_____________________________________________ " << endl;
 	cout << "\t \t|\t \t|" << endl;
 	cout << "\t" << soNhap[0] << "\t|" << "\t" << soNhap[1] << "\t|\t" << soNhap[2] << endl;
@@ -116,12 +117,12 @@ void BanChoi()
 void NhapTenNhanVat()
 {
 	system("cls");
-	cout << "Enter Player 1 Name: ";
-	cin.ignore();
-	cin.getline(Player1, 50, '\n');
-	cout << "Enter Player 2 Name: ";	
-	cin.getline(Player2, 50, '\n');
 
+	cout << "Enter Player 1 Name: ";
+	cin.getline(Player1, 50, '\n');
+	cout << "Enter Player 2 Name: ";
+	cin.getline(Player2, 50, '\n');
+	cout << Player1 << "\n" << Player2 << endl;
 }
 //---------------Nguoi 1 di ---------------
 void Nguoi1()
